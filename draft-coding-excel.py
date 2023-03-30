@@ -124,7 +124,7 @@ if sub == "Home":
         """,
         unsafe_allow_html=True
         )
-    add_bg_from_local('skripsi/excelbg4.png') 
+    add_bg_from_local('excelbg4.png') 
     st.write(
         '''
         ### Pengamanan Data Pada File Excel dengan Diffie-Hellman-RSA
