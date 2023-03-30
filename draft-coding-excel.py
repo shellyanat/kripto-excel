@@ -11,7 +11,7 @@ from PIL import Image
 # P A G E  S E T T I N G ------------
 
 
-st.set_page_config(page_title = "Kriptografi - Pengamanan Data Pada File Excel",layout="wide")
+st.set_page_config(page_title = "Kriptografi - Pengamanan Data Pada File Excel", layout="wide")
 
 st.markdown('''
 <style>
@@ -106,7 +106,7 @@ def InvMod(a,b):
 # G U I  P Y T H O N --------------------------
 with st.sidebar:
     st.title("Pilih Program Di Sini")
-    sub = st.selectbox("Pengamanan Data File Excel", ('Home','Pembangkitan Kunci Publik', 'Enkripsi File', 'Dekripsi File'))
+    sub = st.selectbox("Pengamanan Data File Excel", ('Home','Pembangkitan Kunci', 'Enkripsi File', 'Dekripsi File'))
 
 if sub == "Home":
     import base64
@@ -124,7 +124,7 @@ if sub == "Home":
         """,
         unsafe_allow_html=True
         )
-    add_bg_from_local('excelbg4.png') 
+    add_bg_from_local('skripsi/excelbg4.png') 
     st.write(
         '''
         ### Pengamanan Data Pada File Excel dengan Diffie-Hellman-RSA
@@ -141,7 +141,7 @@ if sub == "Home":
         ''')
 
 # TAB 0 : pembangkitan kunci
-if sub == "Pembangkitan Kunci Publik":
+if sub == "Pembangkitan Kunci":
     a, b, c = st.columns([3,4,2])
     with b:
         '''
@@ -195,7 +195,7 @@ if sub == "Pembangkitan Kunci Publik":
                     st.error('Nilai n harus lebih dari g, input nilai n baru',icon="🚨")
         bag_x_a, bag_y_a = st.columns([5,5])
         with bag_x_a:
-            x_a = st.text_input('Input nilai a, rahasiakan nilai a dari siapapun:')
+            x_a = st.text_input('Input nilai a, rahasiakan nilai a dari siapapun :')
             if x_a:
                 if int(x_a) >= int(n_a) :
                     st.error('Nilai a harus kurang dari nilai n, input nilai a baru',icon="🚨")
@@ -253,18 +253,18 @@ if sub == "Pembangkitan Kunci Publik":
 
         4. Klik tombol "Bangkitkan Kunci Privat" untuk mendapatkan kunci privat
         
-        5. Gunakan kunci privat untuk mengdekripsi data pada file excel
+        5. Gunakan kunci privat untuk mendekripsi data pada file excel
             '''
         bag_g_b, bag_n_b = st.columns([5,5])
         with bag_g_b:
-            g_b = st.text_input('Input nilai g yang telah disepakati bersama Alice:')
+            g_b = st.text_input('Input nilai g yang telah disepakati bersama Alice  :')
             if g_b:
                 if cekprima(int(g_b)) > 0:
                     st.error('Nilai g harus merupakan bilangan prima, input nilai g baru', icon="🚨")
                 if int(g_b) <= 126:
                     st.error('Nilai g harus lebih dari 126, input nilai g baru', icon="🚨")  
         with bag_n_b:
-            n_b = st.text_input('Input nilai yang telah disepakati bersama Alice:')
+            n_b = st.text_input('Input nilai yang telah disepakati bersama Alice  :')
             if n_b:
                 if cekprima(int(n_b)) > 0:
                     st.error('Nilai n harus merupakan bilangan prima, input nilai n baru', icon="🚨")
@@ -272,12 +272,12 @@ if sub == "Pembangkitan Kunci Publik":
                     st.error('Nilai n harus lebih dari g, input nilai n baru',icon="🚨")
         bag_y_b, bag_x_b = st.columns([5,5])
         with bag_y_b:
-            y_b = st.text_input('Input nilai b, rahasiakan nilai b dari siapapun:')
+            y_b = st.text_input('Input nilai b, rahasiakan nilai b dari siapapun :')
             if y_b:
                 if int(y_b) >= int(n_b) :
                     st.error('Nilai y harus kurang dari nilai n, input nilai y baru',icon="🚨")
         with bag_x_b:
-            X_B = st.text_input('Input nilai X dari Alice:')
+            X_B = st.text_input('Input nilai X dari Alice :')
             if X_B:
                 X_B = int(X_B)
 
@@ -319,7 +319,7 @@ if sub == "Pembangkitan Kunci Publik":
 
                 privatkey = str(key_d) + ' ' + str(N2)
 
-                st.metric('Kunci Publik untuk Enkripsi', privatkey)
+                st.metric('Kunci Privat untuk Dekripsi', privatkey)
                 st.warning(' Simpan Kunci Privat', icon="⚠️")
 
 # TAB 1 : enkripsi
