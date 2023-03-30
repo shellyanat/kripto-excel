@@ -195,7 +195,7 @@ if sub == "Pembangkitan Kunci Publik":
                     st.error('Nilai n harus lebih dari g, input nilai n baru',icon="🚨")
         bag_x_a, bag_y_a = st.columns([5,5])
         with bag_x_a:
-            x_a = st.text_input('Input nilai a, rahasiakan nilai a dari siapapun :')
+            x_a = st.text_input('Input nilai a, rahasiakan nilai a dari siapapun:')
             if x_a:
                 if int(x_a) >= int(n_a) :
                     st.error('Nilai a harus kurang dari nilai n, input nilai a baru',icon="🚨")
@@ -257,14 +257,14 @@ if sub == "Pembangkitan Kunci Publik":
             '''
         bag_g_b, bag_n_b = st.columns([5,5])
         with bag_g_b:
-            g_b = st.text_input('Input nilai g yang telah disepakati bersama Alice  :')
+            g_b = st.text_input('Input nilai g yang telah disepakati bersama Alice:')
             if g_b:
                 if cekprima(int(g_b)) > 0:
                     st.error('Nilai g harus merupakan bilangan prima, input nilai g baru', icon="🚨")
                 if int(g_b) <= 126:
                     st.error('Nilai g harus lebih dari 126, input nilai g baru', icon="🚨")  
         with bag_n_b:
-            n_b = st.text_input('Input nilai yang telah disepakati bersama Alice  :')
+            n_b = st.text_input('Input nilai yang telah disepakati bersama Alice:')
             if n_b:
                 if cekprima(int(n_b)) > 0:
                     st.error('Nilai n harus merupakan bilangan prima, input nilai n baru', icon="🚨")
@@ -272,12 +272,12 @@ if sub == "Pembangkitan Kunci Publik":
                     st.error('Nilai n harus lebih dari g, input nilai n baru',icon="🚨")
         bag_y_b, bag_x_b = st.columns([5,5])
         with bag_y_b:
-            y_b = st.text_input('Input nilai b, rahasiakan nilai b dari siapapun :')
+            y_b = st.text_input('Input nilai b, rahasiakan nilai b dari siapapun:')
             if y_b:
                 if int(y_b) >= int(n_b) :
                     st.error('Nilai y harus kurang dari nilai n, input nilai y baru',icon="🚨")
         with bag_x_b:
-            X_B = st.text_input('Input nilai X dari Alice :')
+            X_B = st.text_input('Input nilai X dari Alice:')
             if X_B:
                 X_B = int(X_B)
 
