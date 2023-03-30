@@ -11,7 +11,7 @@ from PIL import Image
 # P A G E  S E T T I N G ------------
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title = "Kriptografi - Pengamanan Data Pada File Excel",layout="wide")
 
 st.markdown('''
 <style>
