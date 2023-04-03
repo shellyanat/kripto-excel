@@ -308,7 +308,7 @@ if sub == "Pembangkitan Kunci":
                 y_b = int(y_b)
                 K2 = (X_B**y_b)%n_b
                 
-                X_B = int(e)
+                e = int(e)
                 N1 = int(N1)
 
                 touN= (n_b-1)*(g_b-1)
